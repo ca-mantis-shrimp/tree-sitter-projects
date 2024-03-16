@@ -327,7 +327,7 @@
     },
     "text": {
       "type": "PATTERN",
-      "value": "[a-zA-Z0-9_ ]+"
+      "value": "[a-zA-Z0-9_ \\p{P}\\p{S}]+"
     },
     "collapsed_icon": {
       "type": "CHOICE",
@@ -371,4 +371,3 @@
   "inline": [],
   "supertypes": []
 }
-

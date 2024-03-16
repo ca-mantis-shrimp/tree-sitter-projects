@@ -84,7 +84,7 @@ module.exports = grammar({
       $.text
     ),
 
-    text: $ => /[a-zA-Z0-9_ ]+/,
+    text: $ => /[a-zA-Z0-9_ \p{P}\p{S}]+/,
 
     collapsed_icon: $ => choice(
       $.collapsed,
@@ -97,4 +97,3 @@ module.exports = grammar({
     no_children: $ => ' '
   }
 });
-
