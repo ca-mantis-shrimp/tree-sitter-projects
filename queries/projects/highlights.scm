@@ -1,9 +1,10 @@
-(root_project) @markup.heading.1
-(child_project) @markup.heading.2
-(grandchild_project) @markup.heading.3
-(great_grandchild_project) @markup.heading.4
-(leaf_project) @markup.heading.5
+(root_project_icon) @markup.heading.1
+(child_project_icon) @markup.heading.2
+(grandchild_project_icon) @markup.heading.3
+(great_grandchild_project_icon) @markup.heading.4
+(leaf_project_icon) @markup.heading.5
 
-(comment) @comment
+(comment_icon) @comment
+(section_icon) @markup.strong
 
-(text) @string
+(text) @spell

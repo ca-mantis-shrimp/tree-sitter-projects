@@ -3,6 +3,7 @@ Happy Path Test
 ===============
 # Test Root Project 
 + Test Root Comment 1
+/ Test Section
 ## Test Child Project
 + Test Child Comment
 ### Test Grandchild Project
@@ -21,34 +22,53 @@ Happy Path Test
 ---
 (source_file
  (root_project
+  (root_project_icon)
   (text)
   (comment
+   (comment_icon)
+   (text))
+  (section
+   (section_icon)
    (text))
   (child_project
+   (child_project_icon)
    (text)
    (comment
+    (comment_icon)
     (text))
    (grandchild_project
+    (grandchild_project_icon)
     (text)
     (comment
+     (comment_icon)
      (text))
     (great_grandchild_project
+     (great_grandchild_project_icon)
      (text)
      (comment
+      (comment_icon)
       (text))
      (leaf_project
+      (leaf_project_icon)
       (text)
       (comment
+       (comment_icon)
        (text))
       (comment
+       (comment_icon)
        (text)))))))
   (root_project
+   (root_project_icon)
    (text)
    (comment
+    (comment_icon)
     (text))
    (child_project
+    (child_project_icon)
     (text)))
   (root_project
+   (root_project_icon)
    (text))
   (root_project
+   (root_project_icon)
    (text)))

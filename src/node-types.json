@@ -8,6 +8,10 @@
       "required": true,
       "types": [
         {
+          "type": "child_project_icon",
+          "named": true
+        },
+        {
           "type": "comment",
           "named": true
         },
@@ -31,9 +35,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "comment_icon",
+          "named": true
+        },
         {
           "type": "text",
           "named": true
@@ -51,6 +59,10 @@
       "types": [
         {
           "type": "comment",
+          "named": true
+        },
+        {
+          "type": "grandchild_project_icon",
           "named": true
         },
         {
@@ -81,6 +93,10 @@
           "named": true
         },
         {
+          "type": "great_grandchild_project_icon",
+          "named": true
+        },
+        {
           "type": "leaf_project",
           "named": true
         },
@@ -105,6 +121,10 @@
       "types": [
         {
           "type": "comment",
+          "named": true
+        },
+        {
+          "type": "leaf_project_icon",
           "named": true
         },
         {
@@ -135,6 +155,10 @@
           "named": true
         },
         {
+          "type": "root_project_icon",
+          "named": true
+        },
+        {
           "type": "section",
           "named": true
         },
@@ -150,9 +174,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "section_icon",
+          "named": true
+        },
         {
           "type": "text",
           "named": true
@@ -176,32 +204,32 @@
     }
   },
   {
-    "type": "# ",
-    "named": false
+    "type": "child_project_icon",
+    "named": true
   },
   {
-    "type": "## ",
-    "named": false
+    "type": "comment_icon",
+    "named": true
   },
   {
-    "type": "### ",
-    "named": false
+    "type": "grandchild_project_icon",
+    "named": true
   },
   {
-    "type": "#### ",
-    "named": false
+    "type": "great_grandchild_project_icon",
+    "named": true
   },
   {
-    "type": "##### ",
-    "named": false
+    "type": "leaf_project_icon",
+    "named": true
   },
   {
-    "type": "+ ",
-    "named": false
+    "type": "root_project_icon",
+    "named": true
   },
   {
-    "type": "/ ",
-    "named": false
+    "type": "section_icon",
+    "named": true
   },
   {
     "type": "text",

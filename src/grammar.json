@@ -12,8 +12,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "# "
+          "type": "SYMBOL",
+          "name": "root_project_icon"
         },
         {
           "type": "SYMBOL",
@@ -70,8 +70,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "## "
+          "type": "SYMBOL",
+          "name": "child_project_icon"
         },
         {
           "type": "SYMBOL",
@@ -128,8 +128,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "### "
+          "type": "SYMBOL",
+          "name": "grandchild_project_icon"
         },
         {
           "type": "SYMBOL",
@@ -186,8 +186,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "#### "
+          "type": "SYMBOL",
+          "name": "great_grandchild_project_icon"
         },
         {
           "type": "SYMBOL",
@@ -244,8 +244,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "##### "
+          "type": "SYMBOL",
+          "name": "leaf_project_icon"
         },
         {
           "type": "SYMBOL",
@@ -287,8 +287,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "+ "
+          "type": "SYMBOL",
+          "name": "comment_icon"
         },
         {
           "type": "SYMBOL",
@@ -300,8 +300,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "/ "
+          "type": "SYMBOL",
+          "name": "section_icon"
         },
         {
           "type": "SYMBOL",
@@ -312,6 +312,34 @@
     "text": {
       "type": "PATTERN",
       "value": "[a-zA-Z0-9_ \\p{P}\\p{S}]+"
+    },
+    "root_project_icon": {
+      "type": "STRING",
+      "value": "# "
+    },
+    "child_project_icon": {
+      "type": "STRING",
+      "value": "## "
+    },
+    "grandchild_project_icon": {
+      "type": "STRING",
+      "value": "### "
+    },
+    "great_grandchild_project_icon": {
+      "type": "STRING",
+      "value": "#### "
+    },
+    "leaf_project_icon": {
+      "type": "STRING",
+      "value": "##### "
+    },
+    "comment_icon": {
+      "type": "STRING",
+      "value": "+ "
+    },
+    "section_icon": {
+      "type": "STRING",
+      "value": "/ "
     }
   },
   "extras": [
