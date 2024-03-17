@@ -5,95 +5,55 @@ module.exports = grammar({
     source_file: $ => repeat($.root_project),
 
     root_project: $ => seq(
-      '#',
-      optional($.collapsed_icon),
+      '# ',
       $.text,
-      optional(repeat($.project_children))
+      optional(repeat($.comment)),
+      optional(repeat($.section)),
+      optional(repeat($.child_project))
     ),
 
     child_project: $ => seq(
-      '##',
-      optional($.collapsed_icon),
+      '## ',
       $.text,
-      optional(repeat($.project_grandchildren))
+      optional(repeat($.comment)),
+      optional(repeat($.section)),
+      optional(repeat($.grandchild_project))
     ),
 
     grandchild_project: $ => seq(
-      '###',
-      optional($.collapsed_icon),
+      '### ',
       $.text,
-      optional(repeat($.project_great_grandchildren))
+      optional(repeat($.comment)),
+      optional(repeat($.section)),
+      optional(repeat($.great_grandchild_project))
     ),
 
     great_grandchild_project: $ => seq(
-      '####',
-      optional($.collapsed_icon),
+      '#### ',
       $.text,
-      optional(repeat($.leaf_children))
+      optional(repeat($.comment)),
+      optional(repeat($.section)),
+      optional(repeat($.leaf_project))
     ),
 
     leaf_project: $ => seq(
-      '#####',
-      optional($.collapsed_icon),
+      '##### ',
       $.text,
-      optional(repeat($.leaf_comment))
+      optional(repeat($.section)),
+      optional(repeat($.comment))
     ),
 
-    project_children: $ => choice(
-        $.child_project,
-        $.root_comment
-      ),
-
-    project_grandchildren: $ => choice(
-      $.grandchild_project,
-      $.child_comment
-    ),
-
-    project_great_grandchildren: $ => choice(
-      $.great_grandchild_project,
-      $.grandchild_comment
-    ),
-
-    leaf_children: $ => choice(
-      $.leaf_project,
-      $.great_grandchild_comment
-    ),
-
-    root_comment: $ => seq(
-      '++',
+    comment: $ => seq(
+      '+ ',
       $.text
     ),
 
-    child_comment: $ => seq(
-      '+++',
-      $.text
-    ),
-
-    grandchild_comment: $ => seq(
-      '++++',
-      $.text
-    ),
-
-    great_grandchild_comment: $ => seq(
-      '+++++',
-      $.text
-    ),
-
-    leaf_comment: $ => seq(
-      '++++++',
+    section: $ => seq(
+      '/ ',
       $.text
     ),
 
     text: $ => /[a-zA-Z0-9_ \p{P}\p{S}]+/,
 
-    collapsed_icon: $ => choice(
-      $.collapsed,
-      $.not_collapsed,
-      $.no_children
-    ),
-
-    collapsed: $ => '> ',
-    not_collapsed: $ => 'v ',
-    no_children: $ => ' '
   }
 });

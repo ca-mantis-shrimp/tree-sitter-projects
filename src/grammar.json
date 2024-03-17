@@ -13,19 +13,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "#"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "collapsed_icon"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "value": "# "
         },
         {
           "type": "SYMBOL",
@@ -38,7 +26,37 @@
               "type": "REPEAT",
               "content": {
                 "type": "SYMBOL",
-                "name": "project_children"
+                "name": "comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "section"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "child_project"
               }
             },
             {
@@ -53,19 +71,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "##"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "collapsed_icon"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "value": "## "
         },
         {
           "type": "SYMBOL",
@@ -78,7 +84,37 @@
               "type": "REPEAT",
               "content": {
                 "type": "SYMBOL",
-                "name": "project_grandchildren"
+                "name": "comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "section"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "grandchild_project"
               }
             },
             {
@@ -93,19 +129,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "###"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "collapsed_icon"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "value": "### "
         },
         {
           "type": "SYMBOL",
@@ -118,7 +142,37 @@
               "type": "REPEAT",
               "content": {
                 "type": "SYMBOL",
-                "name": "project_great_grandchildren"
+                "name": "comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "section"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "great_grandchild_project"
               }
             },
             {
@@ -133,19 +187,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "####"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "collapsed_icon"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "value": "#### "
         },
         {
           "type": "SYMBOL",
@@ -158,7 +200,37 @@
               "type": "REPEAT",
               "content": {
                 "type": "SYMBOL",
-                "name": "leaf_children"
+                "name": "comment"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "section"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "leaf_project"
               }
             },
             {
@@ -173,19 +245,7 @@
       "members": [
         {
           "type": "STRING",
-          "value": "#####"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "collapsed_icon"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "value": "##### "
         },
         {
           "type": "SYMBOL",
@@ -198,7 +258,22 @@
               "type": "REPEAT",
               "content": {
                 "type": "SYMBOL",
-                "name": "leaf_comment"
+                "name": "section"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "comment"
               }
             },
             {
@@ -208,64 +283,12 @@
         }
       ]
     },
-    "project_children": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "child_project"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "root_comment"
-        }
-      ]
-    },
-    "project_grandchildren": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "grandchild_project"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "child_comment"
-        }
-      ]
-    },
-    "project_great_grandchildren": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "great_grandchild_project"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "grandchild_comment"
-        }
-      ]
-    },
-    "leaf_children": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "leaf_project"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "great_grandchild_comment"
-        }
-      ]
-    },
-    "root_comment": {
+    "comment": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "++"
+          "value": "+ "
         },
         {
           "type": "SYMBOL",
@@ -273,51 +296,12 @@
         }
       ]
     },
-    "child_comment": {
+    "section": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "+++"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "text"
-        }
-      ]
-    },
-    "grandchild_comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "++++"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "text"
-        }
-      ]
-    },
-    "great_grandchild_comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "+++++"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "text"
-        }
-      ]
-    },
-    "leaf_comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "++++++"
+          "value": "/ "
         },
         {
           "type": "SYMBOL",
@@ -328,35 +312,6 @@
     "text": {
       "type": "PATTERN",
       "value": "[a-zA-Z0-9_ \\p{P}\\p{S}]+"
-    },
-    "collapsed_icon": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "collapsed"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "not_collapsed"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "no_children"
-        }
-      ]
-    },
-    "collapsed": {
-      "type": "STRING",
-      "value": "> "
-    },
-    "not_collapsed": {
-      "type": "STRING",
-      "value": "v "
-    },
-    "no_children": {
-      "type": "STRING",
-      "value": " "
     }
   },
   "extras": [
