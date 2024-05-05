@@ -16,6 +16,7 @@ module.exports = grammar({
     child_project: $ => seq(
       $.child_project_icon,
       $.text,
+      $.id,
       optional(repeat($.comment)),
       optional(repeat($.section)),
       optional(repeat($.grandchild_project))
@@ -24,6 +25,7 @@ module.exports = grammar({
     grandchild_project: $ => seq(
       $.grandchild_project_icon,
       $.text,
+      $.id,
       optional(repeat($.comment)),
       optional(repeat($.section)),
       optional(repeat($.great_grandchild_project))
@@ -32,6 +34,7 @@ module.exports = grammar({
     great_grandchild_project: $ => seq(
       $.great_grandchild_project_icon,
       $.text,
+      $.id,
       optional(repeat($.comment)),
       optional(repeat($.section)),
       optional(repeat($.leaf_project))
@@ -40,18 +43,21 @@ module.exports = grammar({
     leaf_project: $ => seq(
       $.leaf_project_icon,
       $.text,
+      $.id,
       optional(repeat($.section)),
       optional(repeat($.comment))
     ),
 
     comment: $ => seq(
       $.comment_icon,
-      repeat1(choice($.text, $.new_line))
+      repeat1(choice($.text, $.new_line)),
+      $.id
     ),
 
     section: $ => seq(
       $.section_icon,
-      $.text
+      $.text,
+      $.id,
     ),
 
 
