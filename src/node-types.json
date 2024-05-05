@@ -43,6 +43,10 @@
           "named": true
         },
         {
+          "type": "new_line",
+          "named": true
+        },
+        {
           "type": "text",
           "named": true
         }
@@ -112,6 +116,25 @@
     }
   },
   {
+    "type": "id",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "id_number",
+          "named": true
+        },
+        {
+          "type": "id_start",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "leaf_project",
     "named": true,
     "fields": {},
@@ -152,6 +175,10 @@
         },
         {
           "type": "comment",
+          "named": true
+        },
+        {
+          "type": "id",
           "named": true
         },
         {
@@ -220,7 +247,19 @@
     "named": true
   },
   {
+    "type": "id_number",
+    "named": true
+  },
+  {
+    "type": "id_start",
+    "named": true
+  },
+  {
     "type": "leaf_project_icon",
+    "named": true
+  },
+  {
+    "type": "new_line",
     "named": true
   },
   {

@@ -7,6 +7,7 @@ module.exports = grammar({
     root_project: $ => seq(
       $.root_project_icon,
       $.text,
+      $.id,
       optional(repeat($.comment)),
       optional(repeat($.section)),
       optional(repeat($.child_project))
@@ -45,7 +46,7 @@ module.exports = grammar({
 
     comment: $ => seq(
       $.comment_icon,
-      $.text
+      repeat1(choice($.text, $.new_line))
     ),
 
     section: $ => seq(
@@ -53,7 +54,6 @@ module.exports = grammar({
       $.text
     ),
 
-    text: $ => /[a-zA-Z0-9_ \p{P}\p{S}]+/,
 
     root_project_icon: $ => '# ',
     child_project_icon: $ => '## ',
@@ -63,6 +63,16 @@ module.exports = grammar({
 
     comment_icon: $ => '+ ',
     section_icon: $ => '/ ',
-  }
 
-});
+    id: $ => seq(
+      $.id_start,
+      $.id_number,
+   ),
+    id_start: $ => '|> ',
+    id_number: $=> /[0-9]+/,
+
+    text: $ => /[^#\n+\|\/]+/,
+    new_line: $ => '\n',
+  },
+}
+);

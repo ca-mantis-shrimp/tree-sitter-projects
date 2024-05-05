@@ -20,6 +20,10 @@
           "name": "text"
         },
         {
+          "type": "SYMBOL",
+          "name": "id"
+        },
+        {
           "type": "CHOICE",
           "members": [
             {
@@ -291,8 +295,20 @@
           "name": "comment_icon"
         },
         {
-          "type": "SYMBOL",
-          "name": "text"
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "text"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "new_line"
+              }
+            ]
+          }
         }
       ]
     },
@@ -308,10 +324,6 @@
           "name": "text"
         }
       ]
-    },
-    "text": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z0-9_ \\p{P}\\p{S}]+"
     },
     "root_project_icon": {
       "type": "STRING",
@@ -340,6 +352,35 @@
     "section_icon": {
       "type": "STRING",
       "value": "/ "
+    },
+    "id": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "id_start"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "id_number"
+        }
+      ]
+    },
+    "id_start": {
+      "type": "STRING",
+      "value": "|> "
+    },
+    "id_number": {
+      "type": "PATTERN",
+      "value": "[0-9]+"
+    },
+    "text": {
+      "type": "PATTERN",
+      "value": "[^#\\n+\\|\\/]+"
+    },
+    "new_line": {
+      "type": "STRING",
+      "value": "\n"
     }
   },
   "extras": [

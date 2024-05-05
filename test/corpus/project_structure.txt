@@ -1,74 +1,98 @@
-===============
+================
 Happy Path Test
-===============
-# Test Root Project 
-+ Test Root Comment 1
+================
+# Test Root Project |> 2341282
++ Test Root Comment
 / Test Section
 ## Test Child Project
 + Test Child Comment
-### Test Grandchild Project
+### @Test Grandchild Project
 + Test Grandchild Comment
-#### Test Great Grandchild Project
-+ Test Great Grandchild Comment
-##### Test Leaf Project
-+ Test Leaf Comment
+#### @Test Great Grandchild Projec
++ Test Great Grandch 
+##### Test Leaf Project Comment
++ Test Leaf 
+multiline comment
 + Extra Root Comment
-# Test Root Project 2
-+ Test Root Project 2 Comment
-## Test Sub Collapsed Project
-# Test Collapsed Project
-# Test No Child Project
+# Test Root Project 
+|> 2312924
++ Test Root Project 
+## Test Sub Collaps
+# Test Collapsed Project |> 2341323
+# Test No Child Project |> 2341234
+
 
 ---
-(source_file
- (root_project
-  (root_project_icon)
-  (text)
-  (comment
-   (comment_icon)
-   (text))
-  (section
-   (section_icon)
-   (text))
-  (child_project
-   (child_project_icon)
-   (text)
-   (comment
-    (comment_icon)
-    (text))
-   (grandchild_project
-    (grandchild_project_icon)
-    (text)
-    (comment
-     (comment_icon)
-     (text))
-    (great_grandchild_project
-     (great_grandchild_project_icon)
-     (text)
-     (comment
-      (comment_icon)
-      (text))
-     (leaf_project
-      (leaf_project_icon)
-      (text)
-      (comment
-       (comment_icon)
-       (text))
-      (comment
-       (comment_icon)
-       (text)))))))
-  (root_project
-   (root_project_icon)
-   (text)
-   (comment
-    (comment_icon)
-    (text))
-   (child_project
-    (child_project_icon)
-    (text)))
-  (root_project
-   (root_project_icon)
-   (text))
-  (root_project
-   (root_project_icon)
-   (text)))
+    (source_file
+      (root_project
+        (root_project_icon)
+        (text)
+        (id
+          (id_start)
+          (id_number))
+        (comment
+          (comment_icon)
+          (text)
+          (new_line))
+        (section
+          (section_icon)
+          (text))
+        (child_project
+          (child_project_icon)
+          (text)
+          (comment
+            (comment_icon)
+            (text)
+            (new_line))
+          (grandchild_project
+            (grandchild_project_icon)
+            (text)
+            (comment
+              (comment_icon)
+              (text)
+              (new_line))
+            (great_grandchild_project
+              (great_grandchild_project_icon)
+              (text)
+              (comment
+                (comment_icon)
+                (text)
+                (new_line))
+              (leaf_project
+                (leaf_project_icon)
+                (text)
+                (comment
+                  (comment_icon)
+                  (text)
+                  (new_line)
+                  (text)
+                  (new_line))
+                (comment
+                  (comment_icon)
+                  (text)
+                  (new_line)))))))
+      (root_project
+        (root_project_icon)
+        (text)
+        (id
+          (id_start)
+          (id_number))
+        (comment
+          (comment_icon)
+          (text)
+          (new_line))
+        (child_project
+          (child_project_icon)
+          (text)))
+      (root_project
+        (root_project_icon)
+        (text)
+        (id
+          (id_start)
+          (id_number)))
+      (root_project
+        (root_project_icon)
+        (text)
+        (id
+          (id_start)
+          (id_number))))
