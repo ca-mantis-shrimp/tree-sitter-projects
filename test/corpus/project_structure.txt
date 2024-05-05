@@ -6,12 +6,12 @@ Happy Path Test
 / Test Section |> 1238912
 ## Test Child Project |> 1232910
 + Test Child Comment |> 1298342
-### @Test Grandchild Project |> 875291
+### Test Grandchild Project |> 875291
 + Test Grandchild Comment |> 3485162
 #### @Test Great Grandchild Projec |> 238619
 + Test Great Grandchild |> 4329471
 ##### Test Leaf Project Comment |> 3487123409
-+ Test Leaf |> 2347182394
++ Test Leaf 
 multiline comment |> 324719234
 + Extra Root Comment |> 3412347918
 # Test Root Project  |> 34129384
@@ -86,13 +86,11 @@ multiline comment |> 324719234
             (comment
               (comment_icon)
               (text)
+              (new_line)
+              (text)
               (id
                 (id_start)
                 (id_number)))
-            (ERROR
-              (UNEXPECTED 'm')
-              (id_start)
-              (id_number))
             (comment
               (comment_icon)
               (text)
