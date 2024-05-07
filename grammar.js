@@ -2,83 +2,83 @@ module.exports = grammar({
   name: 'projects',
 
   rules: {
-    source_file: $ => repeat($.root_project),
+    source_file: $ => prec.left(repeat1($.root_project)),
 
-    root_project: $ => seq(
+    root_project: $ => prec.right(seq(
+      $.id,
       $.root_project_icon,
-      $.text,
-      $.id,
-      optional(repeat($.comment)),
+      $.text_line,
       optional(repeat($.section)),
-      optional(repeat($.child_project))
-    ),
+      optional(repeat($.comment)),
+      optional(repeat($.child_project)),
+    )),
 
-    child_project: $ => seq(
+    child_project: $ => prec.right(seq(
+      $.id,
       $.child_project_icon,
-      $.text,
-      $.id,
-      optional(repeat($.comment)),
+      $.text_line,
       optional(repeat($.section)),
-      optional(repeat($.grandchild_project))
-    ),
+      optional(repeat($.comment)),
+      optional(repeat($.grandchild_project)),
+    )),
 
-    grandchild_project: $ => seq(
+    grandchild_project: $ => prec.right(seq(
+      $.id,
       $.grandchild_project_icon,
-      $.text,
-      $.id,
-      optional(repeat($.comment)),
+      $.text_line,
       optional(repeat($.section)),
-      optional(repeat($.great_grandchild_project))
-    ),
+      optional(repeat($.comment)),
+      optional(repeat($.great_grandchild_project)),
+    )),
 
-    great_grandchild_project: $ => seq(
+    great_grandchild_project: $ => prec.right(seq(
+      $.id,
       $.great_grandchild_project_icon,
-      $.text,
-      $.id,
+      $.text_line,
+      optional(repeat($.section)),
       optional(repeat($.comment)),
-      optional(repeat($.section)),
-      optional(repeat($.leaf_project))
-    ),
+      optional(repeat($.leaf_project)),
+    )),
 
-    leaf_project: $ => seq(
+    leaf_project: $ => prec.right(seq(
+      $.id,
       $.leaf_project_icon,
-      $.text,
-      $.id,
+      $.text_line,
       optional(repeat($.section)),
-      optional(repeat($.comment))
-    ),
+      optional(repeat($.comment)),
+    )),
 
-    comment: $ => seq(
-      $.comment_icon,
-      repeat1(choice($.text, $.new_line)),
-      $.id
-    ),
-
-    section: $ => seq(
-      $.section_icon,
-      $.text,
+    comment: $ => prec.right(seq(
       $.id,
-    ),
+      $.comment_icon,
+      repeat1(choice($.text_line, '\n')),
+    )),
+
+    section: $ => prec.right(seq(
+      $.id,
+      $.section_icon,
+      $.text_line,
+    )),
 
 
-    root_project_icon: $ => '# ',
-    child_project_icon: $ => '## ',
-    grandchild_project_icon: $ => '### ',
-    great_grandchild_project_icon: $ => '#### ',
     leaf_project_icon: $ => '##### ',
+    great_grandchild_project_icon: $ => '#### ',
+    grandchild_project_icon: $ => '### ',
+    child_project_icon: $ => '## ',
+    root_project_icon: $ => '# ',
 
-    comment_icon: $ => '+ ',
-    section_icon: $ => '/ ',
+    comment_icon: $ => '+',
+    section_icon: $ => '&',
 
     id: $ => seq(
-      $.id_start,
+      '|',
       $.id_number,
-   ),
-    id_start: $ => '|> ',
-    id_number: $=> /[0-9]+/,
+      '|')
+   ,
 
-    text: $ => /[^#\n+\|\/]+/,
-    new_line: $ => '\n',
+    id_number: $=> token(/[0-9]+/),
+
+    text_line: $ => token(prec(1,/[^|&+#\n]+/)),
   },
 }
 );

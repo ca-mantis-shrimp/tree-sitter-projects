@@ -7,4 +7,4 @@
 (comment_icon) @comment
 (section_icon) @markup.strong
 
-(text) @spell
+(text_line) @spell

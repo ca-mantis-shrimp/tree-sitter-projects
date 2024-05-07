@@ -28,7 +28,7 @@
           "named": true
         },
         {
-          "type": "text",
+          "type": "text_line",
           "named": true
         }
       ]
@@ -51,11 +51,7 @@
           "named": true
         },
         {
-          "type": "new_line",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "text_line",
           "named": true
         }
       ]
@@ -90,7 +86,7 @@
           "named": true
         },
         {
-          "type": "text",
+          "type": "text_line",
           "named": true
         }
       ]
@@ -125,7 +121,7 @@
           "named": true
         },
         {
-          "type": "text",
+          "type": "text_line",
           "named": true
         }
       ]
@@ -136,15 +132,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "id_number",
-          "named": true
-        },
-        {
-          "type": "id_start",
           "named": true
         }
       ]
@@ -175,7 +167,7 @@
           "named": true
         },
         {
-          "type": "text",
+          "type": "text_line",
           "named": true
         }
       ]
@@ -210,7 +202,7 @@
           "named": true
         },
         {
-          "type": "text",
+          "type": "text_line",
           "named": true
         }
       ]
@@ -233,7 +225,7 @@
           "named": true
         },
         {
-          "type": "text",
+          "type": "text_line",
           "named": true
         }
       ]
@@ -245,7 +237,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "root_project",
@@ -253,6 +245,10 @@
         }
       ]
     }
+  },
+  {
+    "type": "\n",
+    "named": false
   },
   {
     "type": "child_project_icon",
@@ -275,15 +271,7 @@
     "named": true
   },
   {
-    "type": "id_start",
-    "named": true
-  },
-  {
     "type": "leaf_project_icon",
-    "named": true
-  },
-  {
-    "type": "new_line",
     "named": true
   },
   {
@@ -295,7 +283,11 @@
     "named": true
   },
   {
-    "type": "text",
+    "type": "text_line",
     "named": true
+  },
+  {
+    "type": "|",
+    "named": false
   }
 ]
