@@ -2,14 +2,23 @@
   "name": "projects",
   "rules": {
     "source_file": {
-      "type": "PREC_LEFT",
+      "type": "PREC_RIGHT",
       "value": 0,
       "content": {
-        "type": "REPEAT1",
-        "content": {
-          "type": "SYMBOL",
-          "name": "root_project"
-        }
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "SYMBOL",
+              "name": "root_project"
+            }
+          },
+          {
+            "type": "SYMBOL",
+            "name": "document_end"
+          }
+        ]
       }
     },
     "root_project": {
@@ -74,6 +83,10 @@
                 "type": "BLANK"
               }
             ]
+          },
+          {
+            "type": "SYMBOL",
+            "name": "root_project_end"
           }
         ]
       }
@@ -328,78 +341,70 @@
       }
     },
     "comment": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "id"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "comment_icon"
-          },
-          {
-            "type": "REPEAT1",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "text_line"
-                },
-                {
-                  "type": "STRING",
-                  "value": "\n"
-                }
-              ]
-            }
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "id"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment_icon"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "text_line"
+              },
+              {
+                "type": "STRING",
+                "value": "\n"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     },
     "section": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "id"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "section_icon"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "text_line"
-          }
-        ]
-      }
-    },
-    "leaf_project_icon": {
-      "type": "STRING",
-      "value": "##### "
-    },
-    "great_grandchild_project_icon": {
-      "type": "STRING",
-      "value": "#### "
-    },
-    "grandchild_project_icon": {
-      "type": "STRING",
-      "value": "### "
-    },
-    "child_project_icon": {
-      "type": "STRING",
-      "value": "## "
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "id"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "section_icon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text_line"
+        }
+      ]
     },
     "root_project_icon": {
       "type": "STRING",
-      "value": "# "
+      "value": "#"
+    },
+    "child_project_icon": {
+      "type": "STRING",
+      "value": "##"
+    },
+    "grandchild_project_icon": {
+      "type": "STRING",
+      "value": "###"
+    },
+    "great_grandchild_project_icon": {
+      "type": "STRING",
+      "value": "####"
+    },
+    "leaf_project_icon": {
+      "type": "STRING",
+      "value": "#####"
     },
     "comment_icon": {
       "type": "STRING",
@@ -436,12 +441,22 @@
     "text_line": {
       "type": "TOKEN",
       "content": {
-        "type": "PREC",
-        "value": 1,
-        "content": {
-          "type": "PATTERN",
-          "value": "[^|&+#\\n]+"
-        }
+        "type": "PATTERN",
+        "value": "[^|&+#\\n]+"
+      }
+    },
+    "root_project_end": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "---"
+      }
+    },
+    "document_end": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "***"
       }
     }
   },

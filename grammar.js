@@ -2,7 +2,7 @@ module.exports = grammar({
   name: 'projects',
 
   rules: {
-    source_file: $ => prec.left(repeat1($.root_project)),
+    source_file: $ => prec.right(seq(repeat1($.root_project),$.document_end)),
 
     root_project: $ => prec.right(seq(
       $.id,
@@ -11,6 +11,7 @@ module.exports = grammar({
       optional(repeat($.section)),
       optional(repeat($.comment)),
       optional(repeat($.child_project)),
+      $.root_project_end
     )),
 
     child_project: $ => prec.right(seq(
@@ -48,24 +49,22 @@ module.exports = grammar({
       optional(repeat($.comment)),
     )),
 
-    comment: $ => prec.right(seq(
+    comment: $ => seq(
       $.id,
       $.comment_icon,
       repeat1(choice($.text_line, '\n')),
-    )),
+    ),
 
-    section: $ => prec.right(seq(
+    section: $ => seq(
       $.id,
       $.section_icon,
       $.text_line,
-    )),
-
-
-    leaf_project_icon: $ => '##### ',
-    great_grandchild_project_icon: $ => '#### ',
-    grandchild_project_icon: $ => '### ',
-    child_project_icon: $ => '## ',
-    root_project_icon: $ => '# ',
+    ),
+    root_project_icon: $ => '#',
+    child_project_icon: $=> '##',
+    grandchild_project_icon: $=> '###',
+    great_grandchild_project_icon: $=> '####',
+    leaf_project_icon: $=> '#####',
 
     comment_icon: $ => '+',
     section_icon: $ => '&',
@@ -78,7 +77,9 @@ module.exports = grammar({
 
     id_number: $=> token(/[0-9]+/),
 
-    text_line: $ => token(prec(1,/[^|&+#\n]+/)),
+    text_line: $ => token(/[^|&+#\n]+/),
+    root_project_end: $ => token('---'),
+    document_end: $ => token('***'),
   },
 }
 );
