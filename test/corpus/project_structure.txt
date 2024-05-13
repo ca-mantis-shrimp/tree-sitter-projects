@@ -1,21 +1,76 @@
 ================
 Happy Path Test
 ================
-|2341282|# Test Root Project 
-|2381432|+ Test Root Comment 
-|1238912|& Test Section 
-|123291|## Test Child Project 
-|1298342|+ Test Child Comment 
-|87529|### Test Grandchild Project 
-|3485162|+ Test Grandchild Comment 
-|23861|#### @Test Great Grandchild Projec
-|4329471|+ Test Great Grandchild 
-|348712340|##### Test Leaf Project Comment 
-|324719234|+ Test Leaf multiline comment 
-|3412347918|+ Extra Root Comment 
-|34129384|# Test Root Project  
-|412398471|+ Test Root Project 
-|3471982|## Test Sub Collaps 
-|2341323|# Test Collapsed Project 
-|2341234|# Test No Child Project 
+|2341282|# Test Root Project
+|1238912|& Test Section
+|2381432|+ Test Root Comment
+|123291|## Test Child Project
+|1298342|+ Test Child Comment
+|87529|### Test Grandchild Project
+|3485162|+ Test Grandchild Comment
+|23861|#### Test Great Grandchild Projec
+|4329471|+ Test Great Grandchild
+|348712340|##### Test Leaf Project Comment
+|324719234|+ Test Leaf multiline comment
 ---
+***
+---
+(source_file
+ (root_project
+  (id
+   (id_number))
+  (root_project_icon)
+  (text_line)
+  (section
+   (id
+    (id_number))
+   (section_icon)
+   (text_line))
+  (comment
+   (id
+    (id_number))
+   (comment_icon)
+   (text_line))
+  (child_project
+   (id
+    (id_number))
+   (child_project_icon)
+   (text_line)
+   (comment
+    (id
+     (id_number))
+    (comment_icon)
+    (text_line))
+   (grandchild_project
+    (id
+     (id_number))
+    (grandchild_project_icon)
+    (text_line)
+    (comment
+     (id
+      (id_number))
+     (comment_icon)
+     (text_line))
+    (great_grandchild_project
+     (id
+      (id_number))
+     (great_grandchild_project_icon)
+     (text_line)
+     (comment
+      (id
+       (id_number))
+      (comment_icon)
+      (text_line))
+     (leaf_project
+      (id
+       (id_number))
+      (leaf_project_icon
+      )
+      (text_line)
+      (comment
+       (id
+	(id_number))
+       (comment_icon)
+       (text_line))))))
+	(root_project_end))
+(document_end))
