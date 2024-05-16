@@ -1,108 +1,111 @@
 ================
 Happy Path Test
 ================
-|2341282|# Test Root Project
-|1238912|& Test Section
-|2381432|+ Test Root Comment
-|123291|## Test Child Project
-|1298342|+ Test Child Comment
-|87529|### Test Grandchild Project
-|3485162|+ Test Grandchild Comment
-|23861|#### Test Great Grandchild Projec
-|4329471|+ Test Great Grandchild
-|348712340|##### Test Leaf Project Comment
-|324719234|+ Test Leaf multiline comment
----
-***
+# Test Root Project |>2341282
+& Test Section |>1238912
++ Test Root Comment |>2381432
+## Test Child Project |>123291
++ Test Child Comment |>1298342
+### Test Grandchild Project |>87529
++ Test Grandchild Comment |>3485162
+#### Test Great Grandchild Projec |>23861
++ Test Great Grandchild |>4329471
+##### Test Leaf Project Comment |>348712340
++ Test Leaf multiline comment |>324719234
 ---
 (source_file
  (root_project
-  (id
-   (id_number))
   (root_project_icon)
   (text_line)
+  (id
+   (id_number))
   (section
-   (id
-    (id_number))
    (section_icon)
-   (text_line))
+   (text_line)
+   (id
+    (id_number)))
   (comment
-   (id
-    (id_number))
    (comment_icon)
-   (text_line))
-  (child_project
+   (text_line)
    (id
-    (id_number))
+    (id_number)))
+  (child_project
    (child_project_icon)
    (text_line)
+   (id
+    (id_number))
    (comment
-    (id
-     (id_number))
     (comment_icon)
-    (text_line))
-   (grandchild_project
+    (text_line)
     (id
-     (id_number))
+     (id_number)))
+   (grandchild_project
     (grandchild_project_icon)
     (text_line)
+    (id
+     (id_number))
     (comment
-     (id
-      (id_number))
      (comment_icon)
-     (text_line))
-    (great_grandchild_project
+     (text_line)
      (id
-      (id_number))
+      (id_number)))
+    (great_grandchild_project
      (great_grandchild_project_icon)
      (text_line)
+     (id
+      (id_number))
      (comment
-      (id
-       (id_number))
       (comment_icon)
-      (text_line))
+      (text_line)
+      (id
+       (id_number)))
      (leaf_project
+      (leaf_project_icon)
+      (text_line)
       (id
        (id_number))
-      (leaf_project_icon
-      )
-      (text_line)
       (comment
-       (id
-	(id_number))
        (comment_icon)
-       (text_line))))))
-	(root_project_end))
-(document_end))
-
+       (text_line)
+       (id
+	(id_number)))))))))
 ================
 Forward Slash
 ================
-|1238294|# Test Project
-|231|## Test child/project
----
-***
+# Test Project |>1238294
+## Test child/project |>231
 ---
 (source_file
  (root_project
-  (id
-   (id_number))
   (root_project_icon)
   (text_line)
+  (id
+   (id_number))
   (child_project
-   (id
-    (id_number))
    (child_project_icon)
-   (text_line))
-  (root_project_end))
- (document_end))
-
+   (text_line)
+   (id
+    (id_number)))))
 ================
 Double Child
 ================
-|1|# Project
-|2|## Child 1
-|3|## Child 2
+# Project |>1
+## Child 1 |>2
+## Child 2 |>3
 ---
-***
----
+(source_file
+ (root_project
+  (root_project_icon)
+  (text_line)
+  (id
+   (id_number))
+  (child_project
+   (child_project_icon)
+   (text_line)
+   (id
+    (id_number)))
+  (child_project
+   (child_project_icon)
+   (text_line)
+   (id
+    (id_number)))))

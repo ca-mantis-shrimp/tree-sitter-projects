@@ -194,10 +194,6 @@
           "named": true
         },
         {
-          "type": "root_project_end",
-          "named": true
-        },
-        {
           "type": "root_project_icon",
           "named": true
         },
@@ -244,10 +240,6 @@
       "required": true,
       "types": [
         {
-          "type": "document_end",
-          "named": true
-        },
-        {
           "type": "root_project",
           "named": true
         }
@@ -267,10 +259,6 @@
     "named": true
   },
   {
-    "type": "document_end",
-    "named": true
-  },
-  {
     "type": "grandchild_project_icon",
     "named": true
   },
@@ -287,10 +275,6 @@
     "named": true
   },
   {
-    "type": "root_project_end",
-    "named": true
-  },
-  {
     "type": "root_project_icon",
     "named": true
   },
@@ -303,7 +287,7 @@
     "named": true
   },
   {
-    "type": "|",
+    "type": "|>",
     "named": false
   }
 ]

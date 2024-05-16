@@ -2,351 +2,198 @@
   "name": "projects",
   "rules": {
     "source_file": {
-      "type": "PREC_RIGHT",
-      "value": 0,
+      "type": "REPEAT1",
       "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "REPEAT1",
-            "content": {
-              "type": "SYMBOL",
-              "name": "root_project"
-            }
-          },
-          {
-            "type": "SYMBOL",
-            "name": "document_end"
-          }
-        ]
+        "type": "SYMBOL",
+        "name": "root_project"
       }
     },
     "root_project": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "id"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "root_project_icon"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "text_line"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "section"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "comment"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "child_project"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "SYMBOL",
-            "name": "root_project_end"
-          }
-        ]
-      }
-    },
-    "child_project": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "id"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "child_project_icon"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "text_line"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "section"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "comment"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "grandchild_project"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "grandchild_project": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "id"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "grandchild_project_icon"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "text_line"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "section"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "comment"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "great_grandchild_project"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "great_grandchild_project": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "id"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "great_grandchild_project_icon"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "text_line"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "section"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "comment"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "leaf_project"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "leaf_project": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "id"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "leaf_project_icon"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "text_line"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "section"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "comment"
-                }
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "comment": {
       "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
+          "name": "root_project_icon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text_line"
+        },
+        {
+          "type": "SYMBOL",
           "name": "id"
         },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "child_project"
+          }
+        }
+      ]
+    },
+    "child_project": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "child_project_icon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text_line"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "id"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "grandchild_project"
+          }
+        }
+      ]
+    },
+    "grandchild_project": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "grandchild_project_icon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text_line"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "id"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "great_grandchild_project"
+          }
+        }
+      ]
+    },
+    "great_grandchild_project": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "great_grandchild_project_icon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text_line"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "id"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "leaf_project"
+          }
+        }
+      ]
+    },
+    "leaf_project": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "leaf_project_icon"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text_line"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "id"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        }
+      ]
+    },
+    "comment": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "SYMBOL",
           "name": "comment_icon"
@@ -366,6 +213,10 @@
               }
             ]
           }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "id"
         }
       ]
     },
@@ -374,15 +225,15 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "id"
-        },
-        {
-          "type": "SYMBOL",
           "name": "section_icon"
         },
         {
           "type": "SYMBOL",
           "name": "text_line"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "id"
         }
       ]
     },
@@ -419,15 +270,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "|"
+          "value": "|>"
         },
         {
           "type": "SYMBOL",
           "name": "id_number"
-        },
-        {
-          "type": "STRING",
-          "value": "|"
         }
       ]
     },
@@ -442,21 +289,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^|&+#\\n]+"
-      }
-    },
-    "root_project_end": {
-      "type": "TOKEN",
-      "content": {
-        "type": "STRING",
-        "value": "---"
-      }
-    },
-    "document_end": {
-      "type": "TOKEN",
-      "content": {
-        "type": "STRING",
-        "value": "***"
+        "value": "[^>\\|&+#\\n]+"
       }
     }
   },

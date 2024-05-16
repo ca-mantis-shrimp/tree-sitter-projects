@@ -2,63 +2,62 @@ module.exports = grammar({
   name: 'projects',
 
   rules: {
-    source_file: $ => prec.right(seq(repeat1($.root_project),$.document_end)),
+    source_file: $ => repeat1($.root_project),
 
-    root_project: $ => prec.right(seq(
-      $.id,
+    root_project: $ => seq(
       $.root_project_icon,
       $.text_line,
-      optional(repeat($.section)),
-      optional(repeat($.comment)),
-      optional(repeat($.child_project)),
-      $.root_project_end
-    )),
-
-    child_project: $ => prec.right(seq(
       $.id,
+      repeat($.section),
+      repeat($.comment),
+      repeat($.child_project),
+    ),
+
+    child_project: $ => seq(
       $.child_project_icon,
       $.text_line,
-      optional(repeat($.section)),
-      optional(repeat($.comment)),
-      optional(repeat($.grandchild_project)),
-    )),
-
-    grandchild_project: $ => prec.right(seq(
       $.id,
+      repeat($.section),
+      repeat($.comment),
+      repeat($.grandchild_project),
+    ),
+
+    grandchild_project: $ => seq(
       $.grandchild_project_icon,
       $.text_line,
-      optional(repeat($.section)),
-      optional(repeat($.comment)),
-      optional(repeat($.great_grandchild_project)),
-    )),
-
-    great_grandchild_project: $ => prec.right(seq(
       $.id,
+      repeat($.section),
+      repeat($.comment),
+      repeat($.great_grandchild_project),
+    ),
+
+    great_grandchild_project: $ => seq(
       $.great_grandchild_project_icon,
       $.text_line,
-      optional(repeat($.section)),
-      optional(repeat($.comment)),
-      optional(repeat($.leaf_project)),
-    )),
-
-    leaf_project: $ => prec.right(seq(
       $.id,
+      repeat($.section),
+      repeat($.comment),
+      repeat($.leaf_project),
+    ),
+
+    leaf_project: $ => seq(
       $.leaf_project_icon,
       $.text_line,
-      optional(repeat($.section)),
-      optional(repeat($.comment)),
-    )),
+      $.id,
+      repeat($.section),
+      repeat($.comment),
+    ),
 
     comment: $ => seq(
-      $.id,
       $.comment_icon,
       repeat1(choice($.text_line, '\n')),
+      $.id,
     ),
 
     section: $ => seq(
-      $.id,
       $.section_icon,
       $.text_line,
+      $.id,
     ),
     root_project_icon: $ => '#',
     child_project_icon: $=> '##',
@@ -70,16 +69,13 @@ module.exports = grammar({
     section_icon: $ => '&',
 
     id: $ => seq(
-      '|',
-      $.id_number,
-      '|')
+      '|>',
+      $.id_number)
     ,
 
     id_number: $=> token(/[0-9]+/),
 
-    text_line: $ => token(/[^|&+#\n]+/),
-    root_project_end: $ => token('---'),
-    document_end: $ => token('***'),
+    text_line: $ => token(/[^>\|&+#\n]+/),
   },
 }
 );
