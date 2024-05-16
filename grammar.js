@@ -73,7 +73,7 @@ module.exports = grammar({
       '|',
       $.id_number,
       '|')
-   ,
+    ,
 
     id_number: $=> token(/[0-9]+/),
 
