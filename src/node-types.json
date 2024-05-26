@@ -242,12 +242,35 @@
         {
           "type": "root_project",
           "named": true
+        },
+        {
+          "type": "sync_token",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sync_token",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "text_line",
+          "named": true
         }
       ]
     }
   },
   {
     "type": "\n",
+    "named": false
+  },
+  {
+    "type": "@",
     "named": false
   },
   {

@@ -12,6 +12,7 @@ Happy Path Test
 + Test Great Grandchild |>4329471
 ##### Test Leaf Project Comment |>348712340
 + Test Leaf multiline comment |>324719234
+@1
 ---
 (source_file
  (root_project
@@ -68,12 +69,15 @@ Happy Path Test
        (comment_icon)
        (text_line)
        (id
-	(id_number)))))))))
+        (id_number))))))))
+(sync_token
+  (text_line)))
 ================
 Forward Slash
 ================
 # Test Project |>1238294
 ## Test child/project |>231
+@2
 ---
 (source_file
  (root_project
@@ -85,13 +89,16 @@ Forward Slash
    (child_project_icon)
    (text_line)
    (id
-    (id_number)))))
+    (id_number))))
+(sync_token
+	(text_line)))
 ================
 Double Child
 ================
 # Project |>1
 ## Child 1 |>2
 ## Child 2 |>3
+@3
 ---
 (source_file
  (root_project
@@ -108,4 +115,6 @@ Double Child
    (child_project_icon)
    (text_line)
    (id
-    (id_number)))))
+    (id_number))))
+(sync_token
+	(text_line)))

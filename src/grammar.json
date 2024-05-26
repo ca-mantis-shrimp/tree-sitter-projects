@@ -2,11 +2,20 @@
   "name": "projects",
   "rules": {
     "source_file": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "SYMBOL",
-        "name": "root_project"
-      }
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "root_project"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "sync_token"
+        }
+      ]
     },
     "root_project": {
       "type": "SEQ",
@@ -275,6 +284,19 @@
         {
           "type": "SYMBOL",
           "name": "id_number"
+        }
+      ]
+    },
+    "sync_token": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "@"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "text_line"
         }
       ]
     },

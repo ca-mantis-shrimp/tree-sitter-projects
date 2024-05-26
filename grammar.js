@@ -2,7 +2,7 @@ module.exports = grammar({
   name: 'projects',
 
   rules: {
-    source_file: $ => repeat1($.root_project),
+    source_file: $ => seq(repeat1($.root_project), $.sync_token),
 
     root_project: $ => seq(
       $.root_project_icon,
@@ -72,6 +72,10 @@ module.exports = grammar({
       '|>',
       $.id_number)
     ,
+
+    sync_token: $ => seq(
+      '@',
+      $.text_line),
 
     id_number: $=> token(/[0-9]+/),
 

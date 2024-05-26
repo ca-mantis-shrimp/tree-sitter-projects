@@ -9,3 +9,6 @@
 
  ((great_grandchild_project) @indent.begin
    (#set! indent.immediate 1))
+
+ ((leaf_project) @indent.begin
+   (#set! indent.immediate 1))

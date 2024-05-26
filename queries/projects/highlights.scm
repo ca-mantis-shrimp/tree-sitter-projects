@@ -8,3 +8,4 @@
 (section_icon) @markup.strong
 
 (text_line) @spell
+(id (#set! conceal "|")) @conceal
