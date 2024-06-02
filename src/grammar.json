@@ -36,14 +36,14 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "section"
+            "name": "comment"
           }
         },
         {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "comment"
+            "name": "section"
           }
         },
         {
@@ -74,14 +74,14 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "section"
+            "name": "comment"
           }
         },
         {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "comment"
+            "name": "section"
           }
         },
         {
@@ -112,14 +112,14 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "section"
+            "name": "comment"
           }
         },
         {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "comment"
+            "name": "section"
           }
         },
         {
@@ -150,14 +150,14 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "section"
+            "name": "comment"
           }
         },
         {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "comment"
+            "name": "section"
           }
         },
         {
@@ -188,14 +188,14 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "section"
+            "name": "comment"
           }
         },
         {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "comment"
+            "name": "section"
           }
         }
       ]

@@ -2,8 +2,8 @@
 Happy Path Test
 ================
 # Test Root Project |>2341282
-& Test Section |>1238912
 + Test Root Comment |>2381432
+& Test Section |>1238912
 ## Test Child Project |>123291
 + Test Child Comment |>1298342
 ### Test Grandchild Project |>87529
@@ -20,13 +20,13 @@ Happy Path Test
   (text_line)
   (id
    (id_number))
-  (section
-   (section_icon)
+  (comment
+   (comment_icon)
    (text_line)
    (id
     (id_number)))
-  (comment
-   (comment_icon)
+  (section
+   (section_icon)
    (text_line)
    (id
     (id_number)))
