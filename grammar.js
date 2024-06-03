@@ -50,7 +50,7 @@ module.exports = grammar({
 
     comment: $ => seq(
       $.comment_icon,
-      repeat1(choice($.text_line, '\n')),
+      repeat1(choice($.text_line, $.url, '\n')),
       $.id,
     ),
 
@@ -77,9 +77,17 @@ module.exports = grammar({
       '@',
       $.text_line),
 
+    url: $ => seq('[',
+      /[^\]]+/,
+      ']',
+      optional(seq('(',
+        /[^\)]+/,
+      ')'))),
+
+
     id_number: $=> token(/[0-9]+/),
 
-    text_line: $ => token(/[^>\|&+#\n]+/),
+    text_line: $ => token(/[^>\|&+\[\]\(\)#\n]+/),
   },
 }
 );

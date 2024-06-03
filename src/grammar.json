@@ -217,6 +217,10 @@
                 "name": "text_line"
               },
               {
+                "type": "SYMBOL",
+                "name": "url"
+              },
+              {
                 "type": "STRING",
                 "value": "\n"
               }
@@ -300,6 +304,48 @@
         }
       ]
     },
+    "url": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\]]+"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "("
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "[^\\)]+"
+                },
+                {
+                  "type": "STRING",
+                  "value": ")"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "id_number": {
       "type": "TOKEN",
       "content": {
@@ -311,7 +357,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^>\\|&+#\\n]+"
+        "value": "[^>\\|&+\\[\\]\\(\\)#\\n]+"
       }
     }
   },

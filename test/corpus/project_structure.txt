@@ -118,3 +118,25 @@ Double Child
     (id_number))))
 (sync_token
 	(text_line)))
+============
+URL Example
+============
+# URL Project |>1
++ before URL [https://www.google.com](Google) after URL|>2
+@3
+---
+(source_file
+  (root_project
+    (root_project_icon)
+    (text_line)
+    (id
+      (id_number))
+    (comment
+      (comment_icon)
+      (text_line)
+      (url)
+      (text_line)
+      (id
+        (id_number))))
+  (sync_token
+    (text_line)))

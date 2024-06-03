@@ -9,3 +9,4 @@
 
 (text_line) @spell
 (id (#set! conceal "|")) @conceal
+(sync_token (#set! conceal "_")) @conceal

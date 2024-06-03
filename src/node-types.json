@@ -53,6 +53,10 @@
         {
           "type": "text_line",
           "named": true
+        },
+        {
+          "type": "url",
+          "named": true
         }
       ]
     }
@@ -266,11 +270,32 @@
     }
   },
   {
+    "type": "url",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "\n",
     "named": false
   },
   {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
     "type": "@",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {
