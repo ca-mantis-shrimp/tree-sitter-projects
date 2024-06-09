@@ -51,11 +51,11 @@
           "named": true
         },
         {
-          "type": "text_line",
+          "type": "markdown_url",
           "named": true
         },
         {
-          "type": "url",
+          "type": "text_line",
           "named": true
         }
       ]
@@ -178,6 +178,25 @@
     }
   },
   {
+    "type": "markdown_url",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "description",
+          "named": true
+        },
+        {
+          "type": "url",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "root_project",
     "named": true,
     "fields": {},
@@ -270,11 +289,6 @@
     }
   },
   {
-    "type": "url",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "\n",
     "named": false
   },
@@ -307,6 +321,10 @@
     "named": true
   },
   {
+    "type": "description",
+    "named": true
+  },
+  {
     "type": "grandchild_project_icon",
     "named": true
   },
@@ -332,6 +350,10 @@
   },
   {
     "type": "text_line",
+    "named": true
+  },
+  {
+    "type": "url",
     "named": true
   },
   {

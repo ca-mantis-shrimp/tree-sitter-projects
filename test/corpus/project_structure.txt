@@ -122,7 +122,9 @@ Double Child
 URL Example
 ============
 # URL Project |>1
-+ before URL [https://www.google.com](Google) after URL|>2
++ before URL
+[https://www.google.com](Google)
+after URL|>2
 @3
 ---
 (source_file
@@ -134,7 +136,9 @@ URL Example
     (comment
       (comment_icon)
       (text_line)
-      (url)
+      (markdown_url
+        (url)
+          (description))
       (text_line)
       (id
         (id_number))))

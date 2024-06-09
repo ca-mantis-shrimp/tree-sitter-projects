@@ -218,7 +218,7 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "url"
+                "name": "markdown_url"
               },
               {
                 "type": "STRING",
@@ -304,7 +304,7 @@
         }
       ]
     },
-    "url": {
+    "markdown_url": {
       "type": "SEQ",
       "members": [
         {
@@ -312,8 +312,8 @@
           "value": "["
         },
         {
-          "type": "PATTERN",
-          "value": "[^\\]]+"
+          "type": "SYMBOL",
+          "name": "url"
         },
         {
           "type": "STRING",
@@ -330,8 +330,8 @@
                   "value": "("
                 },
                 {
-                  "type": "PATTERN",
-                  "value": "[^\\)]+"
+                  "type": "SYMBOL",
+                  "name": "description"
                 },
                 {
                   "type": "STRING",
@@ -346,6 +346,14 @@
         }
       ]
     },
+    "url": {
+      "type": "PATTERN",
+      "value": "https?:\\/\\/[^\\s/$.?#\\]].[^\\s\\]]*"
+    },
+    "description": {
+      "type": "PATTERN",
+      "value": "[^)]+"
+    },
     "id_number": {
       "type": "TOKEN",
       "content": {
@@ -357,7 +365,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^>\\|&+\\[\\]\\(\\)#\\n]+"
+        "value": "[^>\\|&+\\[\\(#\\n]+"
       }
     }
   },
