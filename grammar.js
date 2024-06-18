@@ -77,20 +77,25 @@ module.exports = grammar({
       '@',
       $.text_line),
 
-    markdown_url: $ => seq(
+    markdown_url: $ => prec.right(seq(
             '[',
             $.url,
             ']',
-            optional(seq('(', $.description, ')'))
-    ),
+            optional($.url_description)
+    )),
 
-    url: $ => /https?:\/\/[^\s/$.?#\]].[^\s\]]*/,
-    description: $ => /[^)]+/,
+    url: $ => /https?:\/\/[^\s].[^\s\[\]]*/,
+    url_description: $ => seq('(',/[^()]+/,')'),
 
 
-    id_number: $=> token(/[0-9]+/),
+    id_number: $=> /[0-9]+/,
 
-    text_line: $ => token(/[^>\|&+\[\(#\n]+/),
+    text_line: $ => choice(/[^>\|&+\[\]()#\n]+/, $.escaped_left_bracket, $.escaped_right_bracket, $.escaped_left_parenthesis, $.escaped_right_parenthesis),
+
+    escaped_left_bracket: $ => '\[',
+    escaped_right_bracket: $ => '\]',
+    escaped_left_parenthesis: $ => '\(',
+    escaped_right_parenthesis: $ => '\)',
   },
 }
 );

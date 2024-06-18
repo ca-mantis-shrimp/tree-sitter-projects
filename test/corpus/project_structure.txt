@@ -136,10 +136,36 @@ after URL|>2
     (comment
       (comment_icon)
       (text_line)
-      (markdown_url
-        (url)
-          (description))
+          (markdown_url
+            (url)
+            (url_description))
+          (text_line)
+      (id
+        (id_number))))
+  (sync_token
+    (text_line)))
+===============
+Regular parens
+===============
+# Paren Project |>1
++ something \(inside parens\) here |>2
+@4
+---
+(source_file
+  (root_project
+    (root_project_icon)
+    (text_line)
+    (id
+      (id_number))
+    (comment
+      (comment_icon)
       (text_line)
+        (text_line
+          (escaped_left_parenthesis))
+        (text_line)
+        (text_line
+          (escaped_right_parenthesis))
+        (text_line)
       (id
         (id_number))))
   (sync_token
