@@ -336,11 +336,6 @@
     }
   },
   {
-    "type": "url_description",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "\n",
     "named": false
   },
@@ -398,6 +393,10 @@
   },
   {
     "type": "url",
+    "named": true
+  },
+  {
+    "type": "url_description",
     "named": true
   },
   {

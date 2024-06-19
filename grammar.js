@@ -77,15 +77,15 @@ module.exports = grammar({
       '@',
       $.text_line),
 
-    markdown_url: $ => prec.right(seq(
-            '[',
-            $.url,
-            ']',
-            optional($.url_description)
-    )),
+    markdown_url: $ => seq(
+            optional(seq('[',
+            $.url_description,
+            ']')),
+            '(',$.url,')'
+    ),
 
-    url: $ => /https?:\/\/[^\s].[^\s\[\]]*/,
-    url_description: $ => seq('(',/[^()]+/,')'),
+    url_description: $ => /[^\[\]()]+/,
+    url: $ => /https?:\/\/[^\s\[\]()].[^\s\[\]()]*/,
 
 
     id_number: $=> /[0-9]+/,

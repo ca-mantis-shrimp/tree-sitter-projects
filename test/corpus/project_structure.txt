@@ -123,7 +123,7 @@ URL Example
 ============
 # URL Project |>1
 + before URL
-[https://www.google.com](Google)
+[Google](https://www.google.com)
 after URL|>2
 @3
 ---
@@ -137,8 +137,8 @@ after URL|>2
       (comment_icon)
       (text_line)
           (markdown_url
-            (url)
-            (url_description))
+            (url_description)
+            (url))
           (text_line)
       (id
         (id_number))))

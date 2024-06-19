@@ -305,58 +305,54 @@
       ]
     },
     "markdown_url": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "["
-          },
-          {
-            "type": "SYMBOL",
-            "name": "url"
-          },
-          {
-            "type": "STRING",
-            "value": "]"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "url_description"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "url": {
-      "type": "PATTERN",
-      "value": "https?:\\/\\/[^\\s].[^\\s\\[\\]]*"
-    },
-    "url_description": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "["
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "url_description"
+                },
+                {
+                  "type": "STRING",
+                  "value": "]"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "STRING",
           "value": "("
         },
         {
-          "type": "PATTERN",
-          "value": "[^()]+"
+          "type": "SYMBOL",
+          "name": "url"
         },
         {
           "type": "STRING",
           "value": ")"
         }
       ]
+    },
+    "url_description": {
+      "type": "PATTERN",
+      "value": "[^\\[\\]()]+"
+    },
+    "url": {
+      "type": "PATTERN",
+      "value": "https?:\\/\\/[^\\s\\[\\]()].[^\\s\\[\\]()]*"
     },
     "id_number": {
       "type": "PATTERN",
