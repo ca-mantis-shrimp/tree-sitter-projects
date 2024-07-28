@@ -29,8 +29,16 @@
           "name": "text_line"
         },
         {
-          "type": "SYMBOL",
-          "name": "id"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "id"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "REPEAT",
@@ -67,8 +75,16 @@
           "name": "text_line"
         },
         {
-          "type": "SYMBOL",
-          "name": "id"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "id"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "REPEAT",
@@ -105,8 +121,16 @@
           "name": "text_line"
         },
         {
-          "type": "SYMBOL",
-          "name": "id"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "id"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "REPEAT",
@@ -143,8 +167,16 @@
           "name": "text_line"
         },
         {
-          "type": "SYMBOL",
-          "name": "id"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "id"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "REPEAT",
@@ -181,8 +213,16 @@
           "name": "text_line"
         },
         {
-          "type": "SYMBOL",
-          "name": "id"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "id"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "REPEAT",
@@ -228,8 +268,16 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "id"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "id"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -245,8 +293,16 @@
           "name": "text_line"
         },
         {
-          "type": "SYMBOL",
-          "name": "id"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "id"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
