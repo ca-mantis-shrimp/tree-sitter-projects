@@ -419,7 +419,7 @@
       "members": [
         {
           "type": "PATTERN",
-          "value": "[^>\\|&+\\[\\]()#\\n]+"
+          "value": "[^@\\\\>\\|&+\\[\\]()#\\n]+"
         },
         {
           "type": "SYMBOL",
@@ -436,24 +436,32 @@
         {
           "type": "SYMBOL",
           "name": "escaped_right_parenthesis"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "escaped_at"
         }
       ]
     },
     "escaped_left_bracket": {
       "type": "STRING",
-      "value": "["
+      "value": "\\["
     },
     "escaped_right_bracket": {
       "type": "STRING",
-      "value": "]"
+      "value": "\\]"
     },
     "escaped_left_parenthesis": {
       "type": "STRING",
-      "value": "("
+      "value": "\\("
     },
     "escaped_right_parenthesis": {
       "type": "STRING",
-      "value": ")"
+      "value": "\\)"
+    },
+    "escaped_at": {
+      "type": "STRING",
+      "value": "\\@"
     }
   },
   "extras": [

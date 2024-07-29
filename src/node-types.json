@@ -62,26 +62,6 @@
     }
   },
   {
-    "type": "escaped_left_bracket",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "escaped_left_parenthesis",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "escaped_right_bracket",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "escaped_right_parenthesis",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "grandchild_project",
     "named": true,
     "fields": {},
@@ -317,6 +297,10 @@
       "required": false,
       "types": [
         {
+          "type": "escaped_at",
+          "named": true
+        },
+        {
           "type": "escaped_left_bracket",
           "named": true
         },
@@ -365,6 +349,26 @@
   },
   {
     "type": "comment_icon",
+    "named": true
+  },
+  {
+    "type": "escaped_at",
+    "named": true
+  },
+  {
+    "type": "escaped_left_bracket",
+    "named": true
+  },
+  {
+    "type": "escaped_left_parenthesis",
+    "named": true
+  },
+  {
+    "type": "escaped_right_bracket",
+    "named": true
+  },
+  {
+    "type": "escaped_right_parenthesis",
     "named": true
   },
   {

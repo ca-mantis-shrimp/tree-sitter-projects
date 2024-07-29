@@ -90,12 +90,13 @@ module.exports = grammar({
 
     id_number: $=> /[0-9]+/,
 
-    text_line: $ => choice(/[^>\|&+\[\]()#\n]+/, $.escaped_left_bracket, $.escaped_right_bracket, $.escaped_left_parenthesis, $.escaped_right_parenthesis),
+    text_line: $ => choice(/[^@\\>\|&+\[\]()#\n]+/, $.escaped_left_bracket, $.escaped_right_bracket, $.escaped_left_parenthesis, $.escaped_right_parenthesis, $.escaped_at),
 
-    escaped_left_bracket: $ => '\[',
-    escaped_right_bracket: $ => '\]',
-    escaped_left_parenthesis: $ => '\(',
-    escaped_right_parenthesis: $ => '\)',
+    escaped_left_bracket: $ => '\\[',
+    escaped_right_bracket: $ => '\\]',
+    escaped_left_parenthesis: $ => '\\(',
+    escaped_right_parenthesis: $ => '\\)',
+    escaped_at: $ => '\\@',
   },
 }
 );

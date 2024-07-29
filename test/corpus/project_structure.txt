@@ -170,3 +170,19 @@ Regular parens
         (id_number))))
   (sync_token
     (text_line)))
+===============
+No ID
+===============
+# Paren Project
++ something
+@4
+---
+(source_file
+  (root_project
+    (root_project_icon)
+    (text_line)
+    (comment
+      (comment_icon)
+      (text_line)))
+     (sync_token
+        (text_line)))
